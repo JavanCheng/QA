@@ -1,18 +1,16 @@
-import {Input} from "antd";
+import { Tooltip } from "antd";
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
-const {Search} = Input;
+type QAProps = {
+    tips: string;
+}
 
-const QA = () => {
+const QA = (props: QAProps) => {
+    const { tips } = props
     return (
-        <div style={{width: "500px"}}>
-            <div>请输入姓名:</div>
-            <Search
-                placeholder="input search text"
-                enterButton="Search"
-                size="large"
-                style={{width: "80%"}}
-            />
-        </div>
+        <Tooltip title={tips}>
+            <QuestionCircleOutlined />
+        </Tooltip>
     )
 }
 
